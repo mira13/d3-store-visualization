@@ -19,7 +19,7 @@ Requirements: python3 installed and python virtual environment activated
 ```
 cd backend
 python3 -m pip install -r requirements.txt
-uvicorn arrow:app
+uvicorn main:app
 ```
 
 ### Frontend

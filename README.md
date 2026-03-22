@@ -22,7 +22,7 @@ python3 -m pip install -r requirements.txt
 uvicorn arrow:app
 ```
 
-### Fronend
+### Frontend
 
 Requirements: npm installed
 
@@ -31,6 +31,7 @@ cd fronend
 npm install
 npm run start
 ```
+
 ## Software stack
 
 ### Frontend

@@ -2,3 +2,5 @@ pandas
 fastapi
 pyarrow
 uvicorn
+pytest
+httpx

@@ -1,7 +1,6 @@
 import pyarrow.ipc
 import pandas as pd
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 import json
 from fastapi.middleware.cors import CORSMiddleware
 

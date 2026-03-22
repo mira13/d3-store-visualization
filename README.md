@@ -1,9 +1,9 @@
 # Data visualisation chart
 
 This project is coding exercise: 
-backend serializes data from arrow file
-frontend shows the data chart
-visualisation insight is implemented as profit chart grouped by different categories of the data
+backend serializes data from arrow file,
+frontend shows the data chart.
+Visualisation insight is implemented as profit chart grouped by different categories of the data
 
 ## Installation and run
 

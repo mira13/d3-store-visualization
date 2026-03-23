@@ -4,16 +4,16 @@ import React, { useState, useEffect } from "react";
 
 export default function App() {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
   const groups = ["Sub-Category", "Region", "Category", "State", "Segment", "Ship Mode"]
-  const [dataGrouped, setDataGrouped] = useState([]);
+  const [dataGrouped, setDataGrouped] = useState(null);
   const [group, setGroup] = useState("Region");
   const backendApi = "http://localhost:8000/";
   const pageHeader = "Profit chart";
   const sumColumn = "Profit";
+  const loadingMsg = "Loading data...";
 
-  useEffect(() => {
-    if (data == undefined) 
-      return;
+  function groupData(data, group) {
     const tempData = data.reduce((dataSoFar, item) => {
       if (!dataSoFar[item[group]]) dataSoFar[item[group]] = 0;
       dataSoFar[item[group]] = dataSoFar[item[group]] + item[sumColumn];
@@ -24,7 +24,13 @@ export default function App() {
       name: key,
       value: tempData[key]
     }));
-    setDataGrouped(tempDataMap);
+    return tempDataMap;
+  }
+
+  useEffect(() => {
+    if (data == undefined) 
+      return;
+    setDataGrouped(groupData(data, group));
   }, [data, group])
 
   useEffect(() => {
@@ -34,7 +40,7 @@ export default function App() {
       setData(dataNew)
     })
     .catch(error => {
-      console.log('Error:', error);  
+      setError('Error', error);  
     });
   }, [])
 
@@ -49,8 +55,12 @@ export default function App() {
             </option>
         ))
       }  
+
     </select>
-      {dataGrouped && <LinePlot data={dataGrouped} />}
+      {error ? <h2>{error}</h2> 
+      : dataGrouped ? <LinePlot data={dataGrouped}/> 
+      : <h2>{loadingMsg}</h2> }
+
     </div>
   );
 }

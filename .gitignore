@@ -22,6 +22,7 @@ docs.zip
 archive.zip
 package-lock.json
 node_modules
+coverage
 # vim temporary files
 *~
 .*.sw?

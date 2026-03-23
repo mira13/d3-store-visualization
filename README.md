@@ -5,8 +5,13 @@ backend serializes data from arrow file,
 frontend shows the data chart.
 Visualisation insight is implemented as profit chart grouped by different categories of the data
 
+### Features demonstration 
+
 https://github.com/user-attachments/assets/4920fba2-deaf-4167-863f-89c10b4751bb
 
+### Tests run demonstartion
+
+https://github.com/user-attachments/assets/38e09c48-2561-4e0d-8467-34a45ec93147
 
 ## Installation and run
 
